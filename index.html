@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Travel Itinerary Generator</title>
+    
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for the entire page - card-style layout -->
+    <main class="container">
+        
+        <!-- Header section with page title and description -->
+        <header>
+            <h1>Travel Itinerary Generator</h1>
+            <p>Plan your perfect trip with our itinerary generator</p>
+        </header>
+        
+        <!-- Form section for collecting user travel information -->
+        <section class="form-section">
+            <!-- Form with POST method and n8n webhook action -->
+            <form id="itinerary-form" action="https://aadarsh-gour.app.n8n.cloud/webhook-test/446630d2-a70c-401a-bbdd-dfc01655ae35" method="POST">
+                
+                <!-- Destination/Location input field -->
+                <div class="form-group">
+                    <label for="destination">Destination / Location <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="destination" 
+                        name="destination" 
+                        placeholder="Enter your travel destination (e.g., Paris, Goa, Shimla)"
+                        required
+                    >
+                </div>
+                
+                <!-- Number of days input field -->
+                <div class="form-group">
+                    <label for="days">Number of Days <span class="required">*</span></label>
+                    <input 
+                        type="number" 
+                        id="days" 
+                        name="days" 
+                        placeholder="Enter number of days (e.g., 3, 5, 7)"
+                        min="1"
+                        max="30"
+                        required
+                    >
+                </div>
+                
+                <!-- Budget input field in Indian Rupees -->
+                <div class="form-group">
+                    <label for="budget">Budget (INR) <span class="required">*</span></label>
+                    <input 
+                        type="number" 
+                        id="budget" 
+                        name="budget" 
+                        placeholder="Enter your total budget in Indian Rupees"
+                        min="0"
+                        step="100"
+                        required
+                    >
+                </div>
+                
+                <!-- Mode of travel dropdown -->
+                <div class="form-group">
+                    <label for="travelMode">Mode of Travel <span class="required">*</span></label>
+                    <select id="travelMode" name="travelMode" required>
+                        <option value="">-- Select Mode of Travel --</option>
+                        <option value="bus">Bus</option>
+                        <option value="train">Train</option>
+                        <option value="flight">Flight</option>
+                        <option value="car">Car</option>
+                    </select>
+                </div>
+                
+                <!-- Number of travelers input field -->
+                <div class="form-group">
+                    <label for="travelers">Number of Travelers <span class="required">*</span></label>
+                    <input 
+                        type="number" 
+                        id="travelers" 
+                        name="travelers" 
+                        placeholder="Enter number of people traveling"
+                        min="1"
+                        max="20"
+                        required
+                    >
+                </div>
+                
+                <!-- Email address input field -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email address (e.g., example@email.com)"
+                        required
+                    >
+                </div>
+                
+                <!-- Additional preferences textarea (optional field) -->
+                <div class="form-group">
+                    <label for="preferences">Additional Preferences (Optional)</label>
+                    <textarea 
+                        id="preferences" 
+                        name="preferences" 
+                        rows="4"
+                        placeholder="Any specific preferences? (e.g., vegetarian food, beach activities, historical sites, adventure sports, etc.)"
+                    ></textarea>
+                </div>
+                
+                <!-- Submit button to generate itinerary -->
+                <div class="form-group">
+                    <button type="submit" id="submit-btn">Generate Itinerary</button>
+                </div>
+                
+            </form>
+        </section>
+        
+        <!-- Message placeholder for success/error messages -->
+        <section class="message-section">
+            <div id="message-container" role="alert" aria-live="polite">
+                <!-- Success or error messages will be displayed here dynamically via JavaScript -->
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Popup overlay and modal for displaying n8n webhook response -->
+    <div id="response-popup-overlay" class="popup-overlay" aria-hidden="true">
+        <div class="popup-modal" role="dialog" aria-labelledby="popup-title" aria-modal="true">
+            <div class="popup-header">
+                <h2 id="popup-title">Itinerary Response</h2>
+                <button type="button" id="popup-close-btn" class="popup-close-btn" aria-label="Close">×</button>
+            </div>
+            <div class="popup-body">
+                <div id="popup-content" class="popup-content">
+                    <!-- Webhook response will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Link to external JavaScript file for form handling -->
+    <script src="script.js"></script>
+</body>
+</html>
