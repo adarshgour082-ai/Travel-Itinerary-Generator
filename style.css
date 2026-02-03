@@ -1,0 +1,669 @@
+/* ============================================
+   Travel Itinerary Generator - Modern CSS Stylesheet
+   Academic Capstone Project: Cursor AI - Vibe Code Mastery Cycle 2
+   Travel-Themed Design with Blues and Greens
+   ============================================ */
+
+/* ============================================
+   Global Reset & Base Styles
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+                 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
+                 sans-serif;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+    background-attachment: fixed;
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   Main Container - Centered Card Layout
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 48px 40px;
+    margin: 20px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Header Section Styles
+   ============================================ */
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+header h1 {
+    color: #1a202c;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+header p {
+    color: #718096;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* ============================================
+   Form Section Styles
+   ============================================ */
+
+.form-section {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ============================================
+   Form Group Container
+   ============================================ */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ============================================
+   Label Styles
+   ============================================ */
+
+label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.required {
+    color: #e53e3e;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ============================================
+   Input Field Styles (Text, Number, Email)
+   ============================================ */
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover {
+    border-color: #cbd5e0;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1),
+                0 4px 12px rgba(79, 172, 254, 0.15);
+    transform: translateY(-1px);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder {
+    color: #a0aec0;
+    opacity: 0.8;
+}
+
+/* ============================================
+   Select Dropdown Styles
+   ============================================ */
+
+select {
+    width: 100%;
+    padding: 14px 18px;
+    padding-right: 48px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #2d3748;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%234facfe' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    outline: none;
+}
+
+select:hover {
+    border-color: #cbd5e0;
+}
+
+select:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1),
+                0 4px 12px rgba(79, 172, 254, 0.15);
+    transform: translateY(-1px);
+}
+
+select option {
+    padding: 12px;
+    background-color: #ffffff;
+    color: #2d3748;
+}
+
+/* ============================================
+   Textarea Styles
+   ============================================ */
+
+textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #2d3748;
+    background-color: #ffffff;
+    resize: vertical;
+    min-height: 120px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    line-height: 1.6;
+}
+
+textarea:hover {
+    border-color: #cbd5e0;
+}
+
+textarea:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1),
+                0 4px 12px rgba(79, 172, 254, 0.15);
+    transform: translateY(-1px);
+}
+
+textarea::placeholder {
+    color: #a0aec0;
+    opacity: 0.8;
+}
+
+/* ============================================
+   Submit Button Styles
+   ============================================ */
+
+button[type="submit"],
+#submit-btn {
+    width: 100%;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(79, 172, 254, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::before,
+#submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button[type="submit"]:hover::before,
+#submit-btn:hover::before {
+    left: 100%;
+}
+
+button[type="submit"]:hover,
+#submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+    background: linear-gradient(135deg, #43e97b 0%, #00f2fe 50%, #4facfe 100%);
+}
+
+button[type="submit"]:active,
+#submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+}
+
+button[type="submit"]:focus,
+#submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.2),
+                0 8px 20px rgba(79, 172, 254, 0.4);
+}
+
+/* ============================================
+   Message Section Styles (Success/Error)
+   ============================================ */
+
+.message-section {
+    margin-top: 28px;
+    min-height: 60px;
+}
+
+#message-container {
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+    animation: slideDown 0.4s ease-out;
+    line-height: 1.5;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success Message Styles */
+#message-container.success {
+    display: block;
+    background: linear-gradient(135deg, #d1f2eb 0%, #a8e6cf 100%);
+    color: #0d5d3f;
+    border: 2px solid #7dd3a0;
+    box-shadow: 0 2px 8px rgba(13, 93, 63, 0.15);
+}
+
+/* Error Message Styles */
+#message-container.error {
+    display: block;
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border: 2px solid #f1b0b7;
+    box-shadow: 0 2px 8px rgba(114, 28, 36, 0.1);
+}
+
+/* ============================================
+   Mobile Responsive Design (Mobile-First)
+   ============================================ */
+
+/* Tablet and below */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 16px;
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+    
+    .container {
+        padding: 36px 28px;
+        margin: 0;
+        border-radius: 12px;
+        max-width: 100%;
+    }
+    
+    header {
+        margin-bottom: 32px;
+        padding-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.9rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    form {
+        gap: 20px;
+    }
+    
+    .form-group {
+        gap: 8px;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select,
+    textarea {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+    
+    button[type="submit"],
+    #submit-btn {
+        padding: 14px 28px;
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 12px;
+        padding-top: 24px;
+    }
+    
+    .container {
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+    
+    header {
+        margin-bottom: 28px;
+        padding-bottom: 18px;
+    }
+    
+    header h1 {
+        font-size: 1.65rem;
+        margin-bottom: 10px;
+    }
+    
+    header p {
+        font-size: 0.95rem;
+    }
+    
+    form {
+        gap: 18px;
+    }
+    
+    label {
+        font-size: 0.9rem;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select,
+    textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    textarea {
+        min-height: 100px;
+    }
+    
+    button[type="submit"],
+    #submit-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    
+    #message-container {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .popup-overlay {
+        padding: 12px;
+    }
+    
+    .popup-modal {
+        max-height: 85vh;
+    }
+    
+    .popup-header {
+        padding: 14px 16px;
+    }
+    
+    .popup-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .popup-content {
+        padding: 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 360px) {
+    .container {
+        padding: 24px 16px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        background: #ffffff;
+    }
+    
+    .container {
+        border: 2px solid #000000;
+    }
+    
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+        border-width: 3px;
+        box-shadow: 0 0 0 2px #000000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid #4facfe;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Response Popup (Scrollable Modal)
+   ============================================ */
+
+/* Overlay: full-screen, behind the modal, hidden by default */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.popup-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal box: centered, scrollable content area */
+.popup-modal {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 560px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.popup-overlay.popup-error .popup-modal {
+    border: 2px solid #e53e3e;
+}
+
+/* Header: title + close button */
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 2px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.popup-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0;
+}
+
+.popup-overlay.popup-error .popup-header h2 {
+    color: #c53030;
+}
+
+/* Close button */
+.popup-close-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: #e2e8f0;
+    color: #2d3748;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.popup-close-btn:hover {
+    background: #cbd5e0;
+    color: #1a202c;
+}
+
+.popup-close-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.4);
+}
+
+/* Scrollable body */
+.popup-body {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content {
+    padding: 20px;
+    overflow: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #2d3748;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
